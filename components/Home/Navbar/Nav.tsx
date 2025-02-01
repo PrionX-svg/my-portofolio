@@ -2,6 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 import { navigationLinks } from '@/constant/constant'
 import Link from 'next/link'
+import { HiBars3BottomRight } from 'react-icons/hi2'
+
 const Nav = () => {
   return (
     // Container for the navbar
@@ -29,6 +31,8 @@ const Nav = () => {
               Hire Me
             </button>
           </div>
+          {/* Burger Menu for Mobile Navbar */}
+          <HiBars3BottomRight className='w-8 h-8 cursor-pointer text-white lg:hidden'/>
         </div>
       </div>
     </div>
