@@ -16,11 +16,19 @@ const Nav = () => {
         />
         {/* Navigation Links */}
         <div className='flex items-center space-x-10'>
-          {navigationLinks.map((navigationLinks)=>{
-            return <Link key={navigationLinks.id} href={navigationLinks.url}>
-              <p className='nav_link'>{navigationLinks.label}</p>
-            </Link>
-          })}
+          <div className='hidden lg:flex items-center space-x-8'>
+            {navigationLinks.map((navigationLinks)=>{
+              return <Link key={navigationLinks.id} href={navigationLinks.url}>
+                <p className='nav_link'>{navigationLinks.label}</p>
+              </Link>
+            })}
+          </div>
+          {/* Button */}
+          <div className='flex items-center space-x-4'>
+            <button className='md:px-10 md:py-3 px-8 py-3 text-blue-800 font-semibold sm:text-base text-sm bg-white hover:bg-yellow-300 transition-all duration-200 rounded-lg'>
+              Hire Me
+            </button>
+          </div>
         </div>
       </div>
     </div>
