@@ -22,11 +22,6 @@ export const navigationLinks = [
     {
         id:5,
         url:"#",
-        label:"Reviews"
-    },
-    {
-        id:6,
-        url:"#",
         label:"Contacts"
     },
 

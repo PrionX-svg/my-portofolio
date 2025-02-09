@@ -16,9 +16,8 @@ import { Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import { List } from '@/types';
-import TodoList from './todolists/TodoList';
+import TodoList from './TodoList';
 // import { add } from 'date-fns';
-import Cookies from 'js-cookie';
 
 
 interface HomePageProps {
@@ -27,26 +26,14 @@ interface HomePageProps {
 
 // Fetching data from the API 
 const filterData = async (page: number) => {
-  const token = Cookies.get('token');
-  const res = await fetch(`http://127.0.0.1:8000/lists?page=${page}`, {
-    method: 'GET',
-    headers: {
-      'Authorization': `Bearer ${token}`
-    },
-  });
+  const res = await fetch(`http://127.0.0.1:8000/lists?page=${page}`)
   const data = await res.json()
 
   return data;
 }
 
 const filterButton = async (flag: string) => {
-  const token = Cookies.get('token');
-  const res = await fetch(`http://127.0.0.1:8000/lists/filter?flag=${flag}`, {
-    method: 'GET',
-    headers: {
-      'Authorization': `Bearer ${token}`
-    },
-  });
+  const res = await fetch(`http://127.0.0.1:8000/filter/lists?flag=${flag}`)
   const data = await res.json()
 
   return data;
